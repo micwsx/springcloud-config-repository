@@ -20,6 +20,9 @@ zuul:
     blog:
       path: /blog/**
       url: http://localhost:8003/  #url用于配置符合path的请求路径路由到的服务地址。
+    test:
+      path: /test/**
+      url: http://localhost:8099/  #url用于配置符合path的请求路径路由到的服务地址。  
   ignored-services: eureka-application-service #指定哪些服务不被zuul代理（多个使用逗号分隔）
 #  ignored-services: * # 此方式相当于给所有新发现的服务默认排除zuul网关访问方式，只有配置了路由网关的服务才可以通过zuul网关访问
   ignored-patterns: /**/local/**  #通配方式配置排除网关代理路径。所有符合ignored-patterns的请求路径都不被zuul网关代理。
